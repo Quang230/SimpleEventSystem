@@ -137,3 +137,48 @@ disp.unsubscribe(listPtr);
 
 After the call to unsubscribe, the dispatcher gives up it's shared ownership over the listener.
 
+## Example
+```cpp
+#include <EvtSystem.h>
+#include <iostream>
+#include <string>
+
+class DemoEvent : public evt::EventBase<DemoEvent>
+{
+public:
+
+	const std::string& getMsg() const noexcept
+	{
+		return m_msg;
+	}
+
+private:
+	std::string m_msg{ "DemoEvent dispatched!" };
+};
+
+class DemoListener : public evt::ListenerBase<DemoEvent>
+{
+	void react(EvtShrPtr evtPtr)
+	{
+		std::cout << evtPtr->getMsg() << "\n";
+	}
+};
+
+int main(int argc, char* argv[])
+{
+	// Create a dispatcher
+	auto disp = evt::Dispatcher{};
+
+	// Create a listener
+	auto list1 = std::make_shared<DemoListener>();
+
+	// Subscribe list1 to disp
+	disp.subscribe(list1);
+
+	// Dispatch an event
+	disp.dispatch(std::make_shared<DemoEvent>());
+
+	// Unsubscribe list1 from disp
+	disp.unsubscribe(list1);
+}
+```
