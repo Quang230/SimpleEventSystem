@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EvtSystem", "EvtSystem\EvtSystem.vcxproj", "{7FCE032F-07ED-4FBF-8B14-11053BD2817E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEADBE9D-00BF-4547-A21A-73513F1A32EC}"
+	ProjectSection(SolutionItems) = preProject
+		EvtSystem\README.md = EvtSystem\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
