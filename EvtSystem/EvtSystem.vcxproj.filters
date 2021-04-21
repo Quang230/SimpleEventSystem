@@ -16,4 +16,7 @@
     <ClCompile Include="EvtSystem\src\Dispatcher.cpp" />
     <ClCompile Include="EvtSystem\src\ListenerInterface.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
 </Project>
