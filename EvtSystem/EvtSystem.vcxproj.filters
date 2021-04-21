@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="EvtSystem\include\ListenerInterface.h" />
+    <ClInclude Include="EvtSystem\include\ListenerBase.h" />
+    <ClInclude Include="EvtSystem\include\PrimitiveTypes.h" />
+    <ClInclude Include="EvtSystem\include\EventInterface.h" />
+    <ClInclude Include="EvtSystem\include\EventIDGen.h" />
+    <ClInclude Include="EvtSystem\include\EventBase.h" />
+    <ClInclude Include="EvtSystem\include\Dispatcher.h" />
+    <ClInclude Include="EvtSystem\include\EvtSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EvtSystem\src\EventInterface.cpp" />
+    <ClCompile Include="EvtSystem\src\EventIDGen.cpp" />
+    <ClCompile Include="EvtSystem\src\Dispatcher.cpp" />
+    <ClCompile Include="EvtSystem\src\ListenerInterface.cpp" />
+  </ItemGroup>
+</Project>
