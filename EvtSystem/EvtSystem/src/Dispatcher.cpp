@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <utility>
 #include <include/ListenerInterface.h>
 #include <include/EventInterface.h>
 #include <include/EventInterface.h>
@@ -35,6 +36,7 @@ namespace evt
 
 	void Dispatcher::unsubscribe(ListenerShrPtr listener) noexcept
 	{
+		assert(listener != nullptr);
 		if (auto iter = m_listMap.find(listener->getDerievedEventID()); iter != m_listMap.end())
 		{
 			removeListener(iter->second, listener->getListenerID());
@@ -43,6 +45,8 @@ namespace evt
 
 	void Dispatcher::unsubscribe(EventID_t evtID, ListenerID_t listID) noexcept
 	{
+		assert(evtID != 0);
+		assert(listID != 0);
 		if (auto iter = m_listMap.find(evtID); iter != m_listMap.end())
 		{
 			removeListener(iter->second, listID);
@@ -51,6 +55,7 @@ namespace evt
 
 	void Dispatcher::removeListener(ListenerVec& vec, ListenerID_t listID)
 	{
+		assert(listID != 0);
 		for (auto iterVec = vec.begin(); iterVec != vec.end(); ++iterVec)
 		{
 			if ((*iterVec)->getListenerID() == listID)
@@ -64,6 +69,7 @@ namespace evt
 
 	void Dispatcher::dispatch(EvtBaseShrPtr evtPtr)
 	{
+		assert(evtPtr != nullptr);
 		if (auto iter = m_listMap.find(evtPtr->getDerivedID()); iter != m_listMap.end())
 		{
 			for (auto& listPtr : iter->second)
@@ -75,6 +81,7 @@ namespace evt
 
 	void Dispatcher::push(EvtBaseShrPtr evtPtr)
 	{
+		assert(evtPtr != nullptr);
 		m_evtQueues[m_actIdx].push(evtPtr);
 	}
 

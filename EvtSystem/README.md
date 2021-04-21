@@ -1,8 +1,8 @@
 # Simple Event System
 Simple Event System is a simple event based communication system to be used in a future engine. The system is not thread safe, and should be used only in single threaded applications. Furthermore, the system requires c++17.
 
-The system is based on three components.
-
+The system is based on three components.**
+**
 * Events
 * Listeners
 * Dispatcher
